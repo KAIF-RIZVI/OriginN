@@ -1,0 +1,101 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.status-badge {
+  position: fixed;
+  bottom: 40px;
+  right: -8px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 12px 24px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-normal);
+  cursor: default;
+}
+
+.status-badge:hover {
+  transform: translateX(-8px);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-green 2s infinite ease-in-out;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Footer Badge Styles */
+.app-footer {
+  padding: 80px 24px 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-pill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 32px 8px 12px;
+  border-radius: 100px;
+  background: rgba(15, 15, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.footer-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.footer-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.footer-text .heart {
+  color: #fb7185;
+  margin: 0 6px;
+  font-size: 1.2rem;
+}
+
+.footer-brand {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-left: 6px;
+}
