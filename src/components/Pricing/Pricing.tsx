@@ -20,15 +20,18 @@ const Pricing = () => {
             </div>
             <div className="pricing-amount">
               <span className="original-price">₹14,999</span>
-              <div className="current-price text-gradient-accent">₹4,999</div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                <div className="current-price text-gradient-accent">₹4,999</div>
+                <span style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', fontWeight: 500, letterSpacing: '0.02em' }}>All-inclusive</span>
+              </div>
             </div>
             
             <ul className="pricing-feature-list">
               <li><CheckCircle2 size={24} className="feature-icon" /> <span>Custom Premium Responsive Design</span></li>
               <li><CheckCircle2 size={24} className="feature-icon" /> <span>Up to 5 Dynamic Pages</span></li>
               <li><CheckCircle2 size={24} className="feature-icon" /> <span>Conversion Optimization Architecture</span></li>
-              <li><CheckCircle2 size={24} className="feature-icon" /> <span>72-Hour Rapid Delivery Guarantee</span></li>
-              <li><CheckCircle2 size={24} className="feature-icon" /> <span>1 Month Technical Support</span></li>
+              <li><CheckCircle2 size={24} className="feature-icon" /> <span>7-Day Rapid Delivery Guarantee</span></li>
+              <li><CheckCircle2 size={24} className="feature-icon" /> <span>7 Days Technical Support</span></li>
             </ul>
             
             <a href="#contact" className="btn btn-primary cta-btn">Get Started Now</a>
@@ -43,7 +46,7 @@ const Pricing = () => {
             <span className="checkbox">✓</span> Found cheaper? We match it
           </div>
           <div className="trust-badge">
-            <span className="checkbox">✓</span> 72 hours or full refund
+            <span className="checkbox">✓</span> 7 days or full refund
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Philosophy = () => {
         
         <div className="philosophy-content">
           <p>
-            Getting a quality business website made shouldn't take 6 weeks and cost <span style={{ textDecoration: 'line-through', opacity: 0.6, fontSize: '0.9em' }}>₹50,000</span>. So we built a delivery system that does it in 72 hours at <span className="price-highlight">₹4,999</span> — without cutting corners.
+            Getting a quality business website made shouldn't take 6 weeks and cost <span style={{ textDecoration: 'line-through', opacity: 0.6, fontSize: '0.9em' }}>₹50,000</span>. So we built a delivery system that does it in 7 days at <span className="price-highlight">₹4,999</span> — without cutting corners.
           </p>
           <div className="philosophy-3d-wrapper">
             <div className="wireframe-globe">

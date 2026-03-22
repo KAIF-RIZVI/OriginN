@@ -1,39 +1,44 @@
-import { useState } from 'react';
-import { Send, Mail, Phone, Linkedin, MapPin, FileText, MessageCircle, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Send, Mail, Phone, Linkedin, MapPin, FileText, MessageCircle, CheckCircle, Share2, AlertCircle } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorText, setErrorText] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    formData.append('_subject', 'New Project Inquiry from OriginN Website!');
-    formData.append('_captcha', 'false');
-    
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/kaiferizvi2006@gmail.com", {
-        method: "POST",
-        body: formData
-      });
-      
-      if (response.ok) {
-        setIsSubmitted(true);
-        form.reset();
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        alert("Transmission failed. Please try again.");
-      }
-    } catch (err) {
-      alert("Network error. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
+  useEffect(() => {
+    // Check if user successfully returned from FormSubmit Captcha wrapper
+    if (window.location.search.includes("submitted=true")) {
+      setIsSubmitted(true);
+      window.history.replaceState({}, document.title, window.location.pathname + "#contact");
+      setTimeout(() => setIsSubmitted(false), 8000);
     }
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Note: Do NOT preventDefault() on success because we need the native POST for the Captcha wrapper
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      e.preventDefault();
+      setErrorText("Please complete all required fields before proceeding.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      e.preventDefault();
+      setErrorText("Please provide a valid email format.");
+      return;
+    }
+
+    setErrorText("");
+    setIsSubmitting(true); 
+    // Allowing the browser to process the action="https://formsubmit.co/..." natively now
   };
   return (
     <section className="contact" id="contact">
@@ -63,36 +68,67 @@ const Contact = () => {
                 <MapPin size={20} className="detail-icon" />
                 <span>Remote, India</span>
               </div>
-              <a href="mailto:kaiferizvi2006@gmail.com" className="contact-detail-row link">
+              <a href="mailto:originnwebservices@gmail.com" className="contact-detail-row link">
                 <Mail size={20} className="detail-icon" />
-                <span>kaiferizvi2006@gmail.com</span>
+                <span>originnwebservices@gmail.com</span>
               </a>
               <a href="tel:+918368530707" className="contact-detail-row link">
                 <Phone size={20} className="detail-icon" />
                 <span>+91 83685 30707</span>
               </a>
-              <a href="#" target="_blank" rel="noreferrer" className="contact-detail-row link">
+              <a href="/newbrochure.png" download="OriginN_Brochure.png" target="_blank" rel="noreferrer" className="contact-detail-row link">
                 <FileText size={20} className="detail-icon" />
                 <span>Download Brochure</span>
               </a>
             </div>
 
             <div className="contact-social-pills">
-              <a href="https://www.linkedin.com/in/mohdkaifrizvi" target="_blank" rel="noreferrer" className="social-pill">
+              <a href="http://www.linkedin.com/in/originn" target="_blank" rel="noreferrer" className="social-pill">
                 <Linkedin size={18} /> LinkedIn
               </a>
               <a href="https://wa.me/918368530707" target="_blank" rel="noreferrer" className="social-pill">
                 <MessageCircle size={18} /> WhatsApp
               </a>
-              <a href="mailto:kaiferizvi2006@gmail.com" className="social-pill">
+              <a href="mailto:originnwebservices@gmail.com" className="social-pill">
                 <Mail size={18} /> Email Me
               </a>
+              <button 
+                type="button"
+                className="social-pill" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (navigator.share) {
+                    navigator.share({ title: 'OriginN', text: 'Premium Digital Agency', url: window.location.origin });
+                  } else {
+                    navigator.clipboard.writeText(window.location.origin);
+                    alert('OriginN Website URL copied to your clipboard!');
+                  }
+                }}
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer', fontFamily: 'inherit', color: 'var(--text-primary)' }}
+              >
+                <Share2 size={18} /> Refer Us
+              </button>
             </div>
           </div>
 
           {/* Right Panel: Form */}
           <div className="contact-form-panel glass-panel">
-            <form className="contact-form-inner" onSubmit={handleSubmit}>
+            <form action="https://formsubmit.co/originnwebservices@gmail.com" method="POST" className="contact-form-inner" onSubmit={handleSubmit}>
+              
+              {/* FormSubmit Security & Routing Configuration */}
+              <input type="hidden" name="_subject" value="New Project Inquiry from OriginN Website!" />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_next" value={`${window.location.origin}?submitted=true#contact`} />
+              <input type="text" name="_honey" style={{ display: 'none' }} />
+
+              {/* Inline Form Validation Error Component */}
+              {errorText && (
+                <div style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', borderLeft: '4px solid #ef4444', padding: '12px 16px', borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '12px', color: '#fca5a5' }}>
+                  <AlertCircle size={20} />
+                  <span style={{ fontSize: '0.95rem' }}>{errorText}</span>
+                </div>
+              )}
+
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">YOUR NAME</label>

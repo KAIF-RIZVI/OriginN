@@ -59,6 +59,12 @@
   background-color: #10b981;
   border-radius: 50%;
   box-shadow: 0 0 8px #10b981;
+  transition: all var(--transition-normal);
+}
+
+.pulse-dot-small.closed {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
 }
 
 .hero-title {
@@ -159,7 +165,7 @@
 
 .cube-face.front  { 
   transform: rotateY(0deg) translateZ(140px); 
-  background: linear-gradient(rgba(15, 15, 20, 0.2), rgba(15, 15, 20, 0.9)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80') center/cover;
+  background: linear-gradient(rgba(15, 15, 20, 0.2), rgba(15, 15, 20, 0.9)), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80') center/cover;
 }
 .cube-face.right  { 
   transform: rotateY(90deg) translateZ(140px); 

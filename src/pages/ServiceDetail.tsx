@@ -8,7 +8,7 @@ const serviceData = {
     title: 'Website Development',
     description: 'Bespoke, high-performance websites built with modern frameworks and cutting edge design principles.',
     pricing: [
-      { tier: 'WebPro', price: '₹4,999', originalPrice: '₹14,999', subText: 'All-inclusive — design, development', features: ['Up to 5 Pages', 'Responsive Design', 'Premium Animations', '1 Month Technical Support'] },
+      { tier: 'WebPro', price: '₹4,999', originalPrice: '₹14,999', subText: 'All-inclusive — design, development', features: ['Up to 5 Pages', 'Responsive Design', 'Premium Animations', '7 Days Technical Support'] },
       { tier: 'WebUltra', price: '₹7,499', originalPrice: '₹24,999', subText: 'All-inclusive — design, development', features: ['Custom Full-Stack App', 'CMS Integration', 'Advanced Analytics', 'Performance & Speed Optimization'] }
     ]
   },
@@ -83,7 +83,10 @@ const ServiceDetail = () => {
                   {('subText' in tier) && <p style={{color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '16px'}}>{(tier as any).subText}</p>}
                   <div className="tier-pricing-container">
                     {('originalPrice' in tier) && <span className="tier-original-price">{(tier as any).originalPrice}</span>}
-                    <div className="tier-price text-gradient-accent">{tier.price}</div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
+                      <div className="tier-price text-gradient-accent">{tier.price}</div>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>(inclusive all)</span>
+                    </div>
                   </div>
                   <ul className="tier-features">
                     {tier.features.map((feature, fIdx) => (
@@ -109,7 +112,7 @@ const ServiceDetail = () => {
             <span className="checkbox">✓</span> Found cheaper? We match it
           </div>
           <div className="trust-badge">
-            <span className="checkbox">✓</span> 72 hours or full refund
+            <span className="checkbox">✓</span> 7 days or full refund
           </div>
         </div>
       </div>

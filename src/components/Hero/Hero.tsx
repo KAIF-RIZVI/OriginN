@@ -2,14 +2,17 @@ import { ArrowRight, Code2, Smartphone } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
+  // HOW TO USE: Change this to `false` when you want to show that you are closed!
+  const isAcceptingProjects = true;
+
   return (
     <section className="hero" id="home">
       <div className="container hero-container">
         
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="pulse-dot-small"></span>
-            Premium Digital Solutions
+            <span className={`pulse-dot-small ${isAcceptingProjects ? '' : 'closed'}`}></span>
+            {isAcceptingProjects ? "Currently accepting projects" : "Currently fully booked"}
           </div>
           
           <h1 className="hero-title">
@@ -32,7 +35,7 @@ const Hero = () => {
           
           <div className="hero-stats">
             <div className="stat-item">
-              <h4>72 Hrs</h4>
+              <h4>7 Days</h4>
               <p>Project Delivery</p>
             </div>
             <div className="stat-divider"></div>
