@@ -71,3 +71,10 @@
   color: var(--text-primary);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
+
+@media (max-width: 768px) {
+  .about-section { padding: 80px 0; }
+  .about-stats { grid-template-columns: 1fr; gap: 20px; }
+  .stat-card { padding: 24px; }
+  .about-content h3 { font-size: 2rem; line-height: 1.3; }
+}

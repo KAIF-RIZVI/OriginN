@@ -242,3 +242,10 @@
   margin-top: 16px;
   border: none !important;
 }
+
+@media (max-width: 768px) {
+  .header { height: 70px; }
+  .brand-logo { width: 140px; margin-left: -8px; }
+  .header-actions { gap: 8px; }
+  .mobile-toggle { padding: 4px; }
+}

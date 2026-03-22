@@ -99,3 +99,13 @@
   letter-spacing: 0.1em;
   margin-left: 6px;
 }
+
+@media (max-width: 768px) {
+  .app-footer { padding: 60px 16px 30px; }
+  .footer-pill { flex-direction: column; padding: 16px; width: 100%; border-radius: 20px; gap: 12px; }
+  .footer-logo { width: 56px; height: 56px; }
+  .footer-text { font-size: 1rem; text-align: center; justify-content: center; flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .status-badge { display: none; } /* Hide floating badge on extra small phones so it doesn't overlap UI */
+}

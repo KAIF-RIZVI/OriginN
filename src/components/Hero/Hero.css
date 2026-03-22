@@ -226,6 +226,9 @@
 
 @media (max-width: 768px) {
   .hero-visual {
-    display: none;
+    display: flex;
+    transform: scale(0.85);
+    min-height: 280px;
+    margin-top: 32px;
   }
 }

@@ -154,3 +154,10 @@
 .service-card:hover .service-link .arrow {
   transform: translateX(4px);
 }
+
+@media (max-width: 768px) {
+  .services { padding: 80px 0; }
+  .service-card { padding: 32px 24px; }
+  .service-card h3 { font-size: 1.5rem; }
+  .services-grid { gap: 24px; }
+}
