@@ -8,8 +8,8 @@ const serviceData = {
     title: 'Website Development',
     description: 'Bespoke, high-performance websites built with modern frameworks and cutting edge design principles.',
     pricing: [
-      { tier: 'WebPro', price: '₹4,999', originalPrice: '₹14,999', subText: 'All-inclusive — design, development', features: ['Up to 5 Pages', 'Responsive Design', 'Premium Animations', '7 Days Technical Support'] },
-      { tier: 'WebUltra', price: '₹7,499', originalPrice: '₹24,999', subText: 'All-inclusive — design, development', features: ['Custom Full-Stack App', 'CMS Integration', 'Advanced Analytics', 'Performance & Speed Optimization'] }
+      { tier: 'WebPro', price: '₹4,999', originalPrice: '₹14,999', subText: 'All-inclusive (7 Days Technical Support)', features: ['Custom Premium Responsive Design', 'Up to 5 Dynamic Pages', 'Conversion Optimization Architecture', '7-Day Rapid Delivery Guarantee'] },
+      { tier: 'WebUltra', price: '₹7,499', originalPrice: '₹24,999', subText: 'All-inclusive — design, development', features: ['MORE AI ENHANCED LOOK', 'CMS Integration', 'Advanced Analytics', 'Performance & Speed Optimization'] }
     ]
   },
   'portfolio-development': {
@@ -61,17 +61,25 @@ const ServiceDetail = () => {
         </div>
         
         {serviceId === 'domain-helping' ? (
-          <div className="glass-panel" style={{ padding: '60px 40px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px', borderRadius: '24px' }}>
-            <h3 style={{ fontSize: '2rem', marginBottom: '24px', fontWeight: 600 }}>Hosting & Domain Policy</h3>
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-              We build your projects to seamlessly deploy on your own <strong>custom domain</strong> and target infrastructure.
+          <div className="glass-panel" style={{ padding: '60px 40px', textAlign: 'left', maxWidth: '800px', margin: '0 auto 60px', borderRadius: '24px' }}>
+            <h3 style={{ fontSize: '2rem', marginBottom: '24px', fontWeight: 600, textAlign: 'center' }}>Hosting, Delivery & Support Policy</h3>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '20px' }}>
+              We build and deliver your project ready for deployment on your custom domain and infrastructure, ensuring full ownership and control.
             </p>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>
-              We also fully support deployment onto free global hosting providers like <strong>Vercel</strong> or <strong>Netlify</strong> (subject to their specific terms of service—uptime and hosting availability are not guaranteed).
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '20px' }}>
+              We may assist with initial deployment on third-party platforms such as Vercel or Netlify. However, all hosting services are managed by their respective providers, and we do not take responsibility for uptime, performance, or service interruptions.
             </p>
-            <a href="#contact" className="btn btn-primary" style={{ padding: '16px 32px', display: 'inline-flex', alignItems: 'center' }}>
-              Request Configuration <ArrowLeft size={16} style={{ marginLeft: '8px', transform: 'rotate(180deg)' }}/>
-            </a>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-primary)', lineHeight: 1.7, marginBottom: '20px' }}>
+              After project delivery, a <strong>3-day support window</strong> is provided to address any issues related to the delivered scope.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '40px' }}>
+              Once this period ends, we do not hold responsibility for maintenance, updates, bug fixes, or operational issues unless a separate support or maintenance agreement has been established.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <a href="#contact" className="btn btn-primary" style={{ padding: '16px 32px', display: 'inline-flex', alignItems: 'center' }}>
+                Request Configuration <ArrowLeft size={16} style={{ marginLeft: '8px', transform: 'rotate(180deg)' }}/>
+              </a>
+            </div>
           </div>
         ) : (
           <>
@@ -112,7 +120,7 @@ const ServiceDetail = () => {
             <span className="checkbox">✓</span> Found cheaper? We match it
           </div>
           <div className="trust-badge">
-            <span className="checkbox">✓</span> 7 days or full refund
+            <span className="checkbox">✓</span> 7 days
           </div>
         </div>
       </div>

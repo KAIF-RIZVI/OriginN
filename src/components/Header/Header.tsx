@@ -50,7 +50,7 @@ const Header = () => {
               style={{ width: '20px', height: '20px' }} 
             />
           </a>
-          <a href="/newbrochure.png" download="OriginN_Brochure.png" target="_blank" rel="noreferrer" className="brochure-btn">
+          <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" className="brochure-btn">
             <Download size={18} />
             Brochure
           </a>
@@ -76,7 +76,7 @@ const Header = () => {
           <a href="#work" onClick={() => setMobileMenuOpen(false)}>Our Work</a>
           <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
           <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
-          <a href="/newbrochure.png" download="OriginN_Brochure.png" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-purple)' }}>Download Brochure</a>
+          <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-purple)' }}>Download Brochure</a>
           <a href="#contact" className="mobile-cta" onClick={() => setMobileMenuOpen(false)}>Start Project</a>
           
           <div className="mobile-socials" style={{ display: 'flex', gap: '16px', justifyContent: 'center', padding: '24px 0 0', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '24px' }}>

@@ -76,7 +76,7 @@ const Contact = () => {
                 <Phone size={20} className="detail-icon" />
                 <span>+91 83685 30707</span>
               </a>
-              <a href="/newbrochure.png" download="OriginN_Brochure.png" target="_blank" rel="noreferrer" className="contact-detail-row link">
+              <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" className="contact-detail-row link">
                 <FileText size={20} className="detail-icon" />
                 <span>Download Brochure</span>
               </a>
@@ -90,18 +90,19 @@ const Contact = () => {
                 <MessageCircle size={18} /> WhatsApp
               </a>
               <a href="mailto:originnwebservices@gmail.com" className="social-pill">
-                <Mail size={18} /> Email Me
+                <Mail size={18} /> Email Us
               </a>
               <button 
                 type="button"
                 className="social-pill" 
                 onClick={(e) => {
                   e.preventDefault();
+                  const shareText = "Hey! 👋\nI recently came across Originn Web Services - they build modern websites, portfolios, and digital solutions.\nIf you're looking to grow your online presence, definitely check them out:\n🌐 https://www.originn.online/";
                   if (navigator.share) {
-                    navigator.share({ title: 'OriginN', text: 'Premium Digital Agency', url: window.location.origin });
+                    navigator.share({ title: 'Originn Web Services', text: shareText });
                   } else {
-                    navigator.clipboard.writeText(window.location.origin);
-                    alert('OriginN Website URL copied to your clipboard!');
+                    navigator.clipboard.writeText(shareText);
+                    alert('Recommendation message copied to your clipboard!');
                   }
                 }}
                 style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer', fontFamily: 'inherit', color: 'var(--text-primary)' }}
@@ -159,6 +160,28 @@ const Contact = () => {
                 </div>
               </div>
               
+              <div className="form-group" style={{ marginBottom: '24px' }}>
+                <label htmlFor="plan">PRICING PLAN</label>
+                <select id="plan" name="plan" required defaultValue="">
+                  <option value="" disabled>Select a Plan</option>
+                  
+                  <option value="" disabled>── Website Development ──</option>
+                  <option value="WebPro (₹4,999)">WebPro (₹4,999)</option>
+                  <option value="WebUltra (₹7,499)">WebUltra (₹7,499)</option>
+                  
+                  <option value="" disabled>── Portfolio Development ──</option>
+                  <option value="PortfolioPro (₹2,999)">PortfolioPro (₹2,999)</option>
+                  <option value="PortfolioUltra (₹5,999)">PortfolioUltra (₹5,999)</option>
+                  
+                  <option value="" disabled>── Logo Branding ──</option>
+                  <option value="LogoPro (₹499)">LogoPro (₹499)</option>
+                  <option value="LogoUltra (₹799)">LogoUltra (₹799)</option>
+                  
+                  <option value="" disabled>── Other ──</option>
+                  <option value="Custom / Unsure">Custom / Unsure</option>
+                </select>
+              </div>
+              
               <div className="form-group">
                 <label htmlFor="message">MESSAGE</label>
                 <textarea id="message" name="message" rows={5} placeholder="How can I help you architecture the future?" required></textarea>
@@ -167,6 +190,10 @@ const Contact = () => {
               <button type="submit" className="btn submit-btn" disabled={isSubmitting || isSubmitted} style={{ opacity: isSubmitting ? 0.7 : 1, transition: 'all 0.3s ease' }}>
                 {isSubmitting ? 'Transmitting...' : isSubmitted ? <><CheckCircle size={18} /> Transmission Sent!</> : <>Send Transmission <Send size={18} /></>}
               </button>
+              
+              <p style={{ marginTop: '20px', fontSize: '0.9rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+                Our technical team will contact you shortly.
+              </p>
             </form>
           </div>
           

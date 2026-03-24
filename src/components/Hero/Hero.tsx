@@ -1,4 +1,4 @@
-import { ArrowRight, Code2, Smartphone } from 'lucide-react';
+import { ArrowRight, Smartphone } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -55,9 +55,7 @@ const Hero = () => {
           {/* Abstract 3DCSS Element */}
           <div className="scene">
             <div className="cube">
-              <div className="cube-face front glass-panel">
-                <Code2 size={48} className="visual-icon" />
-              </div>
+              <div className="cube-face front glass-panel"></div>
               <div className="cube-face back glass-panel"></div>
               <div className="cube-face right glass-panel">
                 <Smartphone size={48} className="visual-icon" />

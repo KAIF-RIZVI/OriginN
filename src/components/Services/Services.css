@@ -53,6 +53,22 @@
   transition: transform var(--transition-normal), background var(--transition-normal), border-color var(--transition-normal);
 }
 
+.service-badge-trending {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.4);
+  z-index: 10;
+}
+
 .service-card::before {
   content: '';
   position: absolute;

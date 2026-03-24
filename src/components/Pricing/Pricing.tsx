@@ -46,7 +46,7 @@ const Pricing = () => {
             <span className="checkbox">✓</span> Found cheaper? We match it
           </div>
           <div className="trust-badge">
-            <span className="checkbox">✓</span> 7 days or full refund
+            <span className="checkbox">✓</span> 7 days
           </div>
         </div>
       </div>

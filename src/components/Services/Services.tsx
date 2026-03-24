@@ -7,25 +7,29 @@ const services = [
     id: 'website-development',
     icon: <Code2 size={32} />,
     title: 'Website Development',
-    description: 'Bespoke, high-performance websites built with modern frameworks and best practices.'
+    description: 'Bespoke, high-performance websites built with modern frameworks and best practices.',
+    badge: 'Trending'
   },
   {
     id: 'portfolio-development',
     icon: <LayoutGrid size={32} />,
     title: 'Portfolio Development',
-    description: 'Awwwards-level portfolios designed to showcase your work with striking, premium aesthetics.'
+    description: 'Awwwards-level portfolios designed to showcase your work with striking, premium aesthetics.',
+    badge: null
   },
   {
     id: 'domain-helping',
     icon: <MonitorSmartphone size={32} />,
     title: 'Domain Helping',
-    description: 'End-to-end digital solutions that seamlessly integrate your brand across all digital touchpoints.'
+    description: 'End-to-end digital solutions that seamlessly integrate your brand across all digital touchpoints.',
+    badge: null
   },
   {
     id: 'logo-building',
     icon: <Smartphone size={32} />,
     title: 'Logo Building',
-    description: 'Scalable and vibrant brand identity engineering, from concept to high-fidelity vector delivery.'
+    description: 'Scalable and vibrant brand identity engineering, from concept to high-fidelity vector delivery.',
+    badge: null
   }
 ];
 
@@ -45,6 +49,9 @@ const Services = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card glass-panel" key={index}>
+              {service.badge && (
+                <div className="service-badge-trending">{service.badge}</div>
+              )}
               <div className="service-icon-wrapper">
                 <div className="service-icon-glow"></div>
                 <div className="service-icon">

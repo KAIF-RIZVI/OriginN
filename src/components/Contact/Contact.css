@@ -223,3 +223,6 @@
   .contact-title { font-size: 2.5rem; }
   .form-row { grid-template-columns: 1fr; gap: 20px; }
 }
+
+.contact-form-inner option { background: #0a0a0a; color: #ffffff; padding: 14px 16px; font-size: 1rem; }
+.contact-form-inner option:disabled { color: rgba(255, 255, 255, 0.35); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; background: #050505; padding: 10px 16px; }

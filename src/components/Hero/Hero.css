@@ -169,7 +169,7 @@
 }
 .cube-face.right  { 
   transform: rotateY(90deg) translateZ(140px); 
-  background: linear-gradient(rgba(15, 15, 20, 0.2), rgba(15, 15, 20, 0.9)), url('https://images.unsplash.com/photo-1607799279861-4dddf8b60ddb?auto=format&fit=crop&w=600&q=80') top/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)), url('https://images.unsplash.com/photo-1607799279861-4dddf8b60ddb?auto=format&fit=crop&w=600&q=80') top/cover;
 }
 .cube-face.back   { 
   transform: rotateY(180deg) translateZ(140px); 
