@@ -38,6 +38,13 @@
   margin-bottom: 8px;
 }
 
+.about-stat h3 sup {
+  font-size: 0.45em;
+  color: var(--accent-purple);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
 .about-stat p {
   color: var(--accent-blue);
   font-weight: 500;

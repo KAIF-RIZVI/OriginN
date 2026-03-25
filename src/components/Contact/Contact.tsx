@@ -181,6 +181,11 @@ const Contact = () => {
                   <option value="Custom / Unsure">Custom / Unsure</option>
                 </select>
               </div>
+
+              <div className="form-group" style={{ marginBottom: '24px' }}>
+                <label htmlFor="refCode">REFER BY SOMEONE <span style={{fontSize: '0.7rem', opacity: 0.6, fontWeight: 400, marginLeft: '6px', textTransform: 'none'}}>(optional)</span></label>
+                <input type="text" id="refCode" name="referral_code" placeholder="Enter reference code" />
+              </div>
               
               <div className="form-group">
                 <label htmlFor="message">MESSAGE</label>
@@ -191,9 +196,14 @@ const Contact = () => {
                 {isSubmitting ? 'Transmitting...' : isSubmitted ? <><CheckCircle size={18} /> Transmission Sent!</> : <>Send Transmission <Send size={18} /></>}
               </button>
               
-              <p style={{ marginTop: '20px', fontSize: '0.9rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
-                Our technical team will contact you shortly.
-              </p>
+              <div style={{ marginTop: '24px', textAlign: 'center' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+                  Our technical team will contact you shortly.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', opacity: 0.8, filter: 'drop-shadow(0 0 12px var(--accent-purple))' }}>
+                  <Mail size={28} color="var(--accent-purple)" />
+                </div>
+              </div>
             </form>
           </div>
           

@@ -1,10 +1,29 @@
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X, Rocket, Linkedin, MessageCircle, Download } from 'lucide-react';
+import { Menu, X, Rocket, Linkedin, MessageCircle, Download, SunMedium, Moon } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    return (localStorage.getItem('originn-theme') as 'dark' | 'light') || 'dark';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'light') {
+      root.classList.add('light-theme');
+    } else {
+      root.classList.remove('light-theme');
+    }
+  }, [theme]);
+
+  const cycleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('originn-theme', nextTheme);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +36,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled glass-panel' : ''}`}>
       <div className="container header-content">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src="/logo.png" alt="OriginN Logo" className="brand-logo" onError={(e) => {
             e.currentTarget.style.display = 'none';
             const fallbacks = document.querySelectorAll('.logo-fallback');
@@ -25,13 +44,13 @@ const Header = () => {
           }} />
           <span className="logo-fallback text-gradient" style={{ display: 'none' }}>Origin</span>
           <span className="logo-fallback logo-accent" style={{ display: 'none' }}>N</span>
-        </a>
+        </Link>
 
         <nav className={`desktop-nav`}>
-          <a href="#services" className="nav-link">Services</a>
-          <a href="#work" className="nav-link">Our Work</a>
-          <a href="#pricing" className="nav-link">Pricing</a>
-          <a href="#about" className="nav-link">About</a>
+          <a href="/#services" className="nav-link">Services</a>
+          <a href="/#work" className="nav-link">Our Work</a>
+          <a href="/#pricing" className="nav-link">Pricing</a>
+          <a href="/#about" className="nav-link">About</a>
         </nav>
 
         <div className="header-actions">
@@ -58,6 +77,15 @@ const Header = () => {
             <Rocket size={18} />
             Start Project
           </a>
+
+          <button 
+            className="theme-toggle-btn"
+            onClick={cycleTheme}
+            aria-label={`Toggle theme (Current: ${theme})`}
+            title={`Theme: ${theme}`}
+          >
+            {theme === 'dark' ? <Moon size={20} /> : <SunMedium size={20} />}
+          </button>
           
           <button 
             className="mobile-toggle"
@@ -72,12 +100,12 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav">
-          <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
-          <a href="#work" onClick={() => setMobileMenuOpen(false)}>Our Work</a>
-          <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
-          <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
+          <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+          <a href="/#work" onClick={() => setMobileMenuOpen(false)}>Our Work</a>
+          <a href="/#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <a href="/#about" onClick={() => setMobileMenuOpen(false)}>About</a>
           <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-purple)' }}>Download Brochure</a>
-          <a href="#contact" className="mobile-cta" onClick={() => setMobileMenuOpen(false)}>Start Project</a>
+          <a href="/#contact" className="mobile-cta" onClick={() => setMobileMenuOpen(false)}>Start Project</a>
           
           <div className="mobile-socials" style={{ display: 'flex', gap: '16px', justifyContent: 'center', padding: '24px 0 0', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '24px' }}>
             <a href="https://wa.me/918368530707" className="whatsapp-btn" aria-label="WhatsApp" target="_blank" rel="noreferrer">

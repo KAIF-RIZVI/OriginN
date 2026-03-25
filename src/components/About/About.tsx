@@ -16,11 +16,11 @@ const About = () => {
             </p>
             <div className="about-stats">
               <div className="about-stat">
-                <h3>99%</h3>
+                <h3>90<sup>+</sup>%</h3>
                 <p>Client Success</p>
               </div>
               <div className="about-stat">
-                <h3>5.0</h3>
+                <h3>4.5<sup>+</sup></h3>
                 <p>Average Rating</p>
               </div>
               <div className="about-stat">
