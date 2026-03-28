@@ -83,7 +83,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-social-pills">
-              <a href="http://www.linkedin.com/in/originn" target="_blank" rel="noreferrer" className="social-pill">
+              <a href="https://linkedin.com/company/originnservices" target="_blank" rel="noreferrer" className="social-pill">
                 <Linkedin size={18} /> LinkedIn
               </a>
               <a href="https://wa.me/918368530707" target="_blank" rel="noreferrer" className="social-pill">
