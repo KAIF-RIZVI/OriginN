@@ -27,7 +27,7 @@
       (function() {
         try {
           var localTheme = localStorage.getItem('originn-theme');
-          if (localTheme === 'light') {
+          if (localTheme === 'light' || (!localTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-theme');
           }
         } catch (e) {}
