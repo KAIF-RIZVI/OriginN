@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Send, Mail, Phone, Linkedin, MapPin, FileText, MessageCircle, CheckCircle, Share2, AlertCircle } from 'lucide-react';
+import { Send, Mail, Linkedin, MapPin, FileText, CheckCircle, Share2, AlertCircle } from 'lucide-react';
 import './Contact.css';
+
+const XIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -72,9 +78,9 @@ const Contact = () => {
                 <Mail size={20} className="detail-icon" />
                 <span>originnwebservices@gmail.com</span>
               </a>
-              <a href="tel:+918368530707" className="contact-detail-row link">
-                <Phone size={20} className="detail-icon" />
-                <span>+91 83685 30707</span>
+              <a href="https://linkedin.com/company/originnservices" target="_blank" rel="noreferrer" className="contact-detail-row link">
+                <Linkedin size={20} className="detail-icon" />
+                <span>LinkedIn</span>
               </a>
               <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" className="contact-detail-row link">
                 <FileText size={20} className="detail-icon" />
@@ -86,8 +92,8 @@ const Contact = () => {
               <a href="https://linkedin.com/company/originnservices" target="_blank" rel="noreferrer" className="social-pill">
                 <Linkedin size={18} /> LinkedIn
               </a>
-              <a href="https://wa.me/918368530707" target="_blank" rel="noreferrer" className="social-pill">
-                <MessageCircle size={18} /> WhatsApp
+              <a href="https://x.com/originn68505" target="_blank" rel="noreferrer" className="social-pill">
+                <XIcon size={18} /> Twitter
               </a>
               <a href="mailto:originnwebservices@gmail.com" className="social-pill">
                 <Mail size={18} /> Email Us

@@ -96,7 +96,7 @@
   gap: 16px;
 }
 
-.whatsapp-btn, .linkedin-btn, .gmail-btn {
+.twitter-btn, .linkedin-btn, .gmail-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,17 +107,17 @@
   text-decoration: none;
 }
 
-.whatsapp-btn {
-  background: rgba(37, 211, 102, 0.1);
-  color: #25D366;
-  border: 1px solid rgba(37, 211, 102, 0.2);
+.twitter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.whatsapp-btn:hover {
-  background: rgba(37, 211, 102, 0.2);
+.twitter-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-  border-color: rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .linkedin-btn {
