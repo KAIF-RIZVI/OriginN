@@ -4,12 +4,6 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Rocket, Linkedin, Download, SunMedium, Moon } from 'lucide-react';
 import './Header.css';
 
-const XIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -63,11 +57,16 @@ const Header = () => {
           <a href="/#work" className="nav-link">Our Work</a>
           <a href="/#pricing" className="nav-link">Pricing</a>
           <a href="/#about" className="nav-link">About</a>
+          <Link to="/help" className="nav-link">FAQ</Link>
         </nav>
 
         <div className="header-actions">
-          <a href="https://x.com/originn68505" className="twitter-btn" aria-label="X (Twitter)" target="_blank" rel="noreferrer">
-            <XIcon size={22} />
+          <a href="https://www.instagram.com/originnwebsolutions/" className="instagram-btn" aria-label="Instagram" target="_blank" rel="noreferrer">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
+              alt="Instagram" 
+              style={{ width: '20px', height: '20px' }} 
+            />
           </a>
           <a href="https://linkedin.com/company/originnservices" className="linkedin-btn" aria-label="LinkedIn" target="_blank" rel="noreferrer">
             <Linkedin size={20} />
@@ -79,7 +78,7 @@ const Header = () => {
               style={{ width: '20px', height: '20px' }} 
             />
           </a>
-          <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" className="brochure-btn">
+          <a href="/OriginN_Brochure_new.jpeg" download="OriginN_Services.jpeg" target="_blank" rel="noreferrer" className="brochure-btn">
             <Download size={18} />
             Brochure
           </a>
@@ -114,12 +113,13 @@ const Header = () => {
           <a href="/#work" onClick={() => setMobileMenuOpen(false)}>Our Work</a>
           <a href="/#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
           <a href="/#about" onClick={() => setMobileMenuOpen(false)}>About</a>
-          <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-purple)' }}>Download Brochure</a>
+          <Link to="/help" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
+          <a href="/OriginN_Brochure_new.jpeg" download="OriginN_Services.jpeg" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-purple)' }}>Download Brochure</a>
           <a href="/#contact" className="mobile-cta" onClick={() => setMobileMenuOpen(false)}>Start Project</a>
           
           <div className="mobile-socials" style={{ display: 'flex', gap: '16px', justifyContent: 'center', padding: '24px 0 0', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '24px' }}>
-            <a href="https://x.com/originn68505" className="twitter-btn" aria-label="X (Twitter)" target="_blank" rel="noreferrer">
-              <XIcon size={20} />
+            <a href="https://www.instagram.com/originnwebsolutions/" className="instagram-btn" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="20" height="20" />
             </a>
             <a href="https://linkedin.com/company/originnservices" className="linkedin-btn" aria-label="LinkedIn" target="_blank" rel="noreferrer">
               <Linkedin size={20} />

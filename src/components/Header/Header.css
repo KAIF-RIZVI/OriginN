@@ -96,7 +96,7 @@
   gap: 16px;
 }
 
-.twitter-btn, .linkedin-btn, .gmail-btn {
+.instagram-btn, .linkedin-btn, .gmail-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,17 +107,25 @@
   text-decoration: none;
 }
 
-.twitter-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.instagram-btn {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border: 1px solid rgba(236, 72, 153, 0.2);
 }
 
-.twitter-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+.instagram-btn img {
+  transition: transform var(--transition-fast);
+}
+
+.instagram-btn:hover {
+  background: rgba(236, 72, 153, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+  border-color: rgba(236, 72, 153, 0.4);
+}
+
+.instagram-btn:hover img {
+  transform: scale(1.15);
 }
 
 .linkedin-btn {

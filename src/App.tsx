@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import ServiceDetail from './pages/ServiceDetail';
 import Terms from './pages/Terms';
 import ClientPortal from './pages/ClientPortal';
+import HelpSupport from './pages/HelpSupport';
 import { LayoutDashboard } from 'lucide-react';
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/client-portal" element={<ClientPortal />} />
+          <Route path="/help" element={<HelpSupport />} />
           <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
@@ -75,11 +77,16 @@ function App() {
             Made with love <span className="heart">❤️</span> by <span className="footer-brand">ORIGINN</span>
           </span>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-          <Link to="/terms" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color='var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color='var(--text-secondary)'}>
-            Terms & Conditions
-          </Link>
-          <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', opacity: 0.5, letterSpacing: '0.05em' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+            <Link to="/help" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color='var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color='var(--text-secondary)'}>
+              Help & Support
+            </Link>
+            <Link to="/terms" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.color='var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color='var(--text-secondary)'}>
+              Terms & Conditions
+            </Link>
+          </div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', opacity: 0.6, letterSpacing: '0.05em' }}>
             &copy; 2026 ORIGINN. All rights reserved.
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Send, Mail, Linkedin, MapPin, FileText, CheckCircle, Share2, AlertCircle } from 'lucide-react';
+import { Send, Mail, Linkedin, Instagram, MapPin, FileText, CheckCircle, Share2, AlertCircle } from 'lucide-react';
 import './Contact.css';
 
 const XIcon = ({ size = 20, className = "" }: { size?: number, className?: string }) => (
@@ -82,7 +82,7 @@ const Contact = () => {
                 <Linkedin size={20} className="detail-icon" />
                 <span>LinkedIn</span>
               </a>
-              <a href="/BROCHURE_ORIGINN.jpg" download="OriginN_Brochure.jpg" target="_blank" rel="noreferrer" className="contact-detail-row link">
+              <a href="/OriginN_Brochure_new.jpeg" download="OriginN_Services.jpeg" target="_blank" rel="noreferrer" className="contact-detail-row link">
                 <FileText size={20} className="detail-icon" />
                 <span>Download Brochure</span>
               </a>
@@ -91,6 +91,9 @@ const Contact = () => {
             <div className="contact-social-pills">
               <a href="https://linkedin.com/company/originnservices" target="_blank" rel="noreferrer" className="social-pill">
                 <Linkedin size={18} /> LinkedIn
+              </a>
+              <a href="https://www.instagram.com/originnwebsolutions/" target="_blank" rel="noreferrer" className="social-pill">
+                <Instagram size={18} /> Instagram
               </a>
               <a href="https://x.com/originn68505" target="_blank" rel="noreferrer" className="social-pill">
                 <XIcon size={18} /> Twitter
