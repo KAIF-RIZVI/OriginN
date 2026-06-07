@@ -104,7 +104,7 @@ When you are ready to show the world, you need to "host" your website. The easie
 6. In about 1 minute, Vercel will give you a live URL (e.g., `originn.vercel.app`).
 7. (Optional): You can go to the Vercel project settings and link your own custom domain (like `originn.com`).
 
-Whenever you update your code and push it to GitHub, Vercel will automatically rebuild and update your live website instantly!
+Whenever I update the code and push it to GitHub, Vercel will automatically rebuild and update my live website instantly!
 
 ---
 
